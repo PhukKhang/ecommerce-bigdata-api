@@ -134,12 +134,12 @@ Repo co san [render.yaml](render.yaml) de deploy API bang Docker tren Render.
 Khi tao Blueprint/Service, Render se build Dockerfile trong `ecomerce-api/`,
 goi health check o `/health`, va chay Uvicorn theo bien moi truong `$PORT`.
 
-Sau khi deploy xong, thay URL local bang URL Render:
+API da deploy tren Render:
 
 ```text
-https://your-api.onrender.com/docs
-https://your-api.onrender.com/health
-https://your-api.onrender.com/predict
+https://ecommerce-review-prediction-api.onrender.com/docs
+https://ecommerce-review-prediction-api.onrender.com/health
+https://ecommerce-review-prediction-api.onrender.com/predict
 ```
 
 Neu goi `/predict` bi cham hoac het memory tren free plan, chuyen Render plan
@@ -160,6 +160,18 @@ Mo [http://127.0.0.1:5500](http://127.0.0.1:5500). Dashboard hien thi:
 
 Thu muc [dashboards/powerbi](dashboards/powerbi) chua cac CSV da tong hop de nap
 vao Power BI.
+
+Power BI dashboard da tao trong:
+
+```text
+report/Ecommerce_BigData_Dashboard.pbix
+```
+
+Link chia se dashboard/report:
+
+```text
+https://iuhedu-my.sharepoint.com/:u:/g/personal/23660931_khang_student_iuh_edu_vn/IQBAZ3qZbmIzR6FuHwUfXq5DAZv_ukdTyu3MFDIzyO0kzpQ?e=ws7Ar1
+```
 
 ## Chay Notebook Tren Databricks
 
