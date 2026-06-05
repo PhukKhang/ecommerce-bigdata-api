@@ -26,6 +26,124 @@
     <main>
       <section class="kpi-grid" id="kpi-grid"></section>
 
+      <section class="prediction-section" id="prediction">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Prediction</p>
+            <h2>Dự đoán review khách hàng</h2>
+          </div>
+          <span class="model-badge">FastAPI</span>
+        </div>
+
+        <div class="prediction-layout">
+          <form class="panel prediction-form" id="prediction-form">
+            <label class="field field-wide">
+              <span>API endpoint</span>
+              <input
+                id="api-endpoint"
+                name="api_endpoint"
+                type="url"
+                value="http://127.0.0.1:8000/predict"
+                autocomplete="url"
+              />
+            </label>
+
+            <label class="field">
+              <span>Payment type</span>
+              <select name="payment_type">
+                <option value="credit_card">credit_card</option>
+                <option value="boleto">boleto</option>
+                <option value="voucher">voucher</option>
+                <option value="debit_card">debit_card</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Payment installments</span>
+              <input name="payment_installments" type="number" step="1" value="1" />
+            </label>
+
+            <label class="field">
+              <span>Number of items</span>
+              <input name="number_of_items" type="number" step="1" value="1" />
+            </label>
+
+            <label class="field">
+              <span>Avg item price</span>
+              <input name="avg_item_price" type="number" step="0.01" value="100" />
+            </label>
+
+            <label class="field">
+              <span>Delivery time</span>
+              <input name="delivery_time" type="number" step="1" value="7" />
+            </label>
+
+            <label class="field">
+              <span>Delivery delay</span>
+              <input name="delivery_delay" type="number" step="1" value="-2" />
+            </label>
+
+            <label class="field">
+              <span>Shipping duration</span>
+              <input name="shipping_duration" type="number" step="1" value="1" />
+            </label>
+
+            <label class="field">
+              <span>Order total value</span>
+              <input name="order_total_value" type="number" step="0.01" value="110" />
+            </label>
+
+            <label class="field">
+              <span>Customer total orders</span>
+              <input name="customer_total_orders" type="number" step="1" value="0" />
+            </label>
+
+            <label class="field">
+              <span>Customer total spent</span>
+              <input name="customer_total_spent" type="number" step="0.01" value="0" />
+            </label>
+
+            <label class="field">
+              <span>Avg review score customer</span>
+              <input name="avg_review_score_customer" type="number" step="0.01" value="0" />
+            </label>
+
+            <button class="predict-button" id="predict-button" type="submit">
+              Predict Review
+            </button>
+          </form>
+
+          <article class="panel prediction-result" aria-live="polite">
+            <div class="result-header">
+              <p class="section-label">Result</p>
+              <span class="result-badge" id="prediction-status">Ready</span>
+            </div>
+            <div class="prediction-outcome">
+              <span class="outcome-label" id="prediction-label">No prediction yet</span>
+              <strong id="prediction-confidence">--</strong>
+              <small id="prediction-model">Random Forest</small>
+            </div>
+            <div class="probability-list">
+              <div class="probability-row">
+                <span>Positive</span>
+                <div class="probability-track">
+                  <span id="positive-probability-bar"></span>
+                </div>
+                <strong id="positive-probability">--</strong>
+              </div>
+              <div class="probability-row">
+                <span>Negative</span>
+                <div class="probability-track">
+                  <span id="negative-probability-bar"></span>
+                </div>
+                <strong id="negative-probability">--</strong>
+              </div>
+            </div>
+            <pre class="prediction-json" id="prediction-json">{}</pre>
+          </article>
+        </div>
+      </section>
+
       <section class="dashboard-grid">
         <article class="panel panel-wide">
           <div class="panel-heading">

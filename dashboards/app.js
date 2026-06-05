@@ -16,6 +16,137 @@ const formatters = {
   percent: (value) => percent.format(value),
 };
 
+const PREDICTION_API_STORAGE_KEY = "predictionApiEndpoint";
+const DEFAULT_PREDICTION_API = "http://127.0.0.1:8000/predict";
+const predictionNumberFields = [
+  "payment_installments",
+  "number_of_items",
+  "avg_item_price",
+  "delivery_time",
+  "delivery_delay",
+  "shipping_duration",
+  "order_total_value",
+  "customer_total_orders",
+  "customer_total_spent",
+  "avg_review_score_customer",
+];
+
+function getElement(id) {
+  return document.getElementById(id);
+}
+
+function normalizePredictUrl(value) {
+  const trimmed = value.trim();
+  if (!trimmed) return DEFAULT_PREDICTION_API;
+
+  try {
+    const url = new URL(trimmed);
+    if (url.pathname.endsWith("/docs")) {
+      url.pathname = url.pathname.replace(/\/docs\/?$/, "/predict");
+    } else if (!url.pathname.endsWith("/predict")) {
+      url.pathname = `${url.pathname.replace(/\/$/, "")}/predict`;
+    }
+    url.hash = "";
+    return url.toString();
+  } catch {
+    return trimmed.endsWith("/predict") ? trimmed : `${trimmed.replace(/\/$/, "")}/predict`;
+  }
+}
+
+function setPredictionStatus(label, tone = "neutral") {
+  const status = getElement("prediction-status");
+  status.textContent = label;
+  status.dataset.tone = tone;
+}
+
+function setPredictButtonLoading(isLoading) {
+  const button = getElement("predict-button");
+  button.disabled = isLoading;
+  button.textContent = isLoading ? "Predicting..." : "Predict Review";
+}
+
+function getPredictionPayload(form) {
+  const formData = new FormData(form);
+  const payload = {
+    payment_type: formData.get("payment_type"),
+  };
+
+  predictionNumberFields.forEach((field) => {
+    const value = Number(formData.get(field));
+    if (Number.isNaN(value)) {
+      throw new Error(`Invalid value: ${field}`);
+    }
+    payload[field] = value;
+  });
+
+  return payload;
+}
+
+function renderPredictionResult(result) {
+  const positive = result.probabilities?.positive_review ?? 0;
+  const negative = result.probabilities?.negative_review ?? 0;
+  const isPositive = result.prediction === "positive_review";
+
+  getElement("prediction-label").textContent = isPositive ? "Positive Review" : "Negative Review";
+  getElement("prediction-label").dataset.prediction = isPositive ? "positive" : "negative";
+  getElement("prediction-confidence").textContent = `${result.confidence} confidence`;
+  getElement("prediction-model").textContent = result.model;
+  getElement("positive-probability").textContent = percent.format(positive);
+  getElement("negative-probability").textContent = percent.format(negative);
+  getElement("positive-probability-bar").style.width = `${Math.max(0, Math.min(positive, 1)) * 100}%`;
+  getElement("negative-probability-bar").style.width = `${Math.max(0, Math.min(negative, 1)) * 100}%`;
+  getElement("prediction-json").textContent = JSON.stringify(result, null, 2);
+  setPredictionStatus("Complete", "success");
+}
+
+async function submitPrediction(event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const endpointInput = getElement("api-endpoint");
+  const endpoint = normalizePredictUrl(endpointInput.value);
+  const payload = getPredictionPayload(form);
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), 180000);
+
+  endpointInput.value = endpoint;
+  localStorage.setItem(PREDICTION_API_STORAGE_KEY, endpoint);
+  setPredictionStatus("Loading", "loading");
+  setPredictButtonLoading(true);
+
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      const detail = typeof result.detail === "string" ? result.detail : JSON.stringify(result.detail);
+      throw new Error(detail || `Prediction failed: ${response.status}`);
+    }
+    renderPredictionResult(result);
+  } catch (error) {
+    const message = error.name === "AbortError" ? "Prediction timed out" : error.message;
+    setPredictionStatus("Error", "error");
+    getElement("prediction-label").textContent = message;
+    getElement("prediction-label").dataset.prediction = "error";
+    getElement("prediction-confidence").textContent = "--";
+    getElement("prediction-json").textContent = JSON.stringify({ error: message }, null, 2);
+  } finally {
+    window.clearTimeout(timeoutId);
+    setPredictButtonLoading(false);
+  }
+}
+
+function setupPredictionForm() {
+  const form = getElement("prediction-form");
+  const endpointInput = getElement("api-endpoint");
+  endpointInput.value = localStorage.getItem(PREDICTION_API_STORAGE_KEY) || DEFAULT_PREDICTION_API;
+  form.addEventListener("submit", submitPrediction);
+}
+
 function renderKpis(kpis) {
   const cards = [
     ["Doanh thu", kpis.total_revenue, "currency"],
@@ -177,3 +308,5 @@ loadDashboard().catch((error) => {
   );
   console.error(error);
 });
+
+setupPredictionForm();

@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.schema import HealthResponse, PredictionRequest, PredictionResponse
 from app.predictor import get_health, predict
@@ -7,6 +8,14 @@ app = FastAPI(
     title="E-commerce Review Prediction API",
     version="1.0.0",
     description="FastAPI service for Random Forest customer review prediction."
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
