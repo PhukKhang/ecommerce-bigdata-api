@@ -18,6 +18,7 @@ const formatters = {
 
 const PREDICTION_API_STORAGE_KEY = "predictionApiEndpoint";
 const DEFAULT_PREDICTION_API = "http://127.0.0.1:8000/predict";
+const PREDICTION_TIMEOUT_MS = 600000;
 const predictionNumberFields = [
   "payment_installments",
   "number_of_items",
@@ -107,7 +108,7 @@ async function submitPrediction(event) {
   const endpoint = normalizePredictUrl(endpointInput.value);
   const payload = getPredictionPayload(form);
   const controller = new AbortController();
-  const timeoutId = window.setTimeout(() => controller.abort(), 180000);
+  const timeoutId = window.setTimeout(() => controller.abort(), PREDICTION_TIMEOUT_MS);
 
   endpointInput.value = endpoint;
   localStorage.setItem(PREDICTION_API_STORAGE_KEY, endpoint);
@@ -128,7 +129,10 @@ async function submitPrediction(event) {
     }
     renderPredictionResult(result);
   } catch (error) {
-    const message = error.name === "AbortError" ? "Prediction timed out" : error.message;
+    const message =
+      error.name === "AbortError"
+        ? "Prediction timed out. Render Free may still be starting Spark; wait a moment and retry."
+        : error.message;
     setPredictionStatus("Error", "error");
     getElement("prediction-label").textContent = message;
     getElement("prediction-label").dataset.prediction = "error";
