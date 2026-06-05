@@ -16,7 +16,20 @@ MODEL_PATH = Path(os.getenv("MODEL_PATH", DEFAULT_MODEL_PATH)).expanduser().reso
 def get_spark():
     return (
         SparkSession.builder
+        .master(os.getenv("SPARK_MASTER", "local[1]"))
         .appName("EcommercePredictionAPI")
+        .config("spark.driver.host", os.getenv("SPARK_DRIVER_HOST", "127.0.0.1"))
+        .config(
+            "spark.driver.bindAddress",
+            os.getenv("SPARK_DRIVER_BIND_ADDRESS", "127.0.0.1"),
+        )
+        .config("spark.ui.enabled", "false")
+        .config("spark.default.parallelism", "1")
+        .config("spark.sql.shuffle.partitions", "1")
+        .config("spark.python.worker.reuse", "true")
+        .config("spark.driver.memory", os.getenv("SPARK_DRIVER_MEMORY", "384m"))
+        .config("spark.executor.memory", os.getenv("SPARK_EXECUTOR_MEMORY", "384m"))
+        .config("spark.local.dir", os.getenv("SPARK_LOCAL_DIRS", "/tmp"))
         .getOrCreate()
     )
 
