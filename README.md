@@ -173,6 +173,15 @@ Link chia se dashboard/report:
 https://iuhedu-my.sharepoint.com/:u:/g/personal/23660931_khang_student_iuh_edu_vn/IQBAZ3qZbmIzR6FuHwUfXq5DAZv_ukdTyu3MFDIzyO0kzpQ?e=ws7Ar1
 ```
 
+## Bao Cao Va Slide
+
+Tai lieu nop va thuyet trinh nam trong thu muc `report/`:
+
+- Bao cao final da kiem tra: `report/Bao cao cuoi ky Cloud - final checked.docx`
+- File Power BI: `report/Ecommerce_BigData_Dashboard.pbix`
+- Script tao slide Canva 30 slide: `report/canva_slide_script_30_slides.md`
+- Bieu do so sanh model: `report/figures/*.png`
+
 ## Chay Notebook Tren Databricks
 
 Chay lan luot:
