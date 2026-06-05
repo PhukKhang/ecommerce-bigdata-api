@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local raw data and generated Spark storage
+data/
+raw/
+bronze/
+silver/
+gold/
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Keep the lightweight dashboard payload in source control.
+!dashboards/data/
+!dashboards/data/dashboard_data.json
+
+# Spark PipelineModel stores required model content in nested data directories.
+!ecomerce-api/models/best_model/**/data/
+!ecomerce-api/models/best_model/**/data/**
+*.crc
+
+# Local runtime files
+*.log
+.env
+
+# Superseded model artifact
+ecomerce-api/models/random_forest_model/

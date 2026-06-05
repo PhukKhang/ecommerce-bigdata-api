@@ -1,0 +1,434 @@
+{
+  "generated_at": "2026-05-31T13:55:37.374042+00:00",
+  "dataset_source_url": "https://github.com/spdrio/Brazilian-E-Commerce-Public-Dataset-by-Olist",
+  "kpis": {
+    "total_revenue": 16008872.12,
+    "total_orders": 99441,
+    "unique_customers": 96096,
+    "sellers": 3095,
+    "average_order_value": 160.99,
+    "average_review_score": 4.07,
+    "positive_review_rate": 0.7662,
+    "late_delivery_rate": 0.0811
+  },
+  "delivery": {
+    "delivered_orders": 96476,
+    "late_orders": 7827,
+    "on_time_or_early_orders": 88649,
+    "average_delivery_days": 12.56,
+    "average_delay_days": -11.18
+  },
+  "monthly_revenue": [
+    {
+      "month": "2016-09",
+      "revenue": 252.24,
+      "orders": 4
+    },
+    {
+      "month": "2016-10",
+      "revenue": 59090.48,
+      "orders": 324
+    },
+    {
+      "month": "2016-12",
+      "revenue": 19.62,
+      "orders": 1
+    },
+    {
+      "month": "2017-01",
+      "revenue": 138488.04,
+      "orders": 800
+    },
+    {
+      "month": "2017-02",
+      "revenue": 291908.01,
+      "orders": 1780
+    },
+    {
+      "month": "2017-03",
+      "revenue": 449863.6,
+      "orders": 2682
+    },
+    {
+      "month": "2017-04",
+      "revenue": 417788.03,
+      "orders": 2404
+    },
+    {
+      "month": "2017-05",
+      "revenue": 592918.82,
+      "orders": 3700
+    },
+    {
+      "month": "2017-06",
+      "revenue": 511276.38,
+      "orders": 3245
+    },
+    {
+      "month": "2017-07",
+      "revenue": 592382.92,
+      "orders": 4026
+    },
+    {
+      "month": "2017-08",
+      "revenue": 674396.32,
+      "orders": 4331
+    },
+    {
+      "month": "2017-09",
+      "revenue": 727762.45,
+      "orders": 4285
+    },
+    {
+      "month": "2017-10",
+      "revenue": 779677.88,
+      "orders": 4631
+    },
+    {
+      "month": "2017-11",
+      "revenue": 1194882.8,
+      "orders": 7544
+    },
+    {
+      "month": "2017-12",
+      "revenue": 878401.48,
+      "orders": 5673
+    },
+    {
+      "month": "2018-01",
+      "revenue": 1115004.18,
+      "orders": 7269
+    },
+    {
+      "month": "2018-02",
+      "revenue": 992463.34,
+      "orders": 6728
+    },
+    {
+      "month": "2018-03",
+      "revenue": 1159652.12,
+      "orders": 7211
+    },
+    {
+      "month": "2018-04",
+      "revenue": 1160785.48,
+      "orders": 6939
+    },
+    {
+      "month": "2018-05",
+      "revenue": 1153982.15,
+      "orders": 6873
+    },
+    {
+      "month": "2018-06",
+      "revenue": 1023880.5,
+      "orders": 6167
+    },
+    {
+      "month": "2018-07",
+      "revenue": 1066540.75,
+      "orders": 6292
+    },
+    {
+      "month": "2018-08",
+      "revenue": 1022425.32,
+      "orders": 6512
+    },
+    {
+      "month": "2018-09",
+      "revenue": 4439.54,
+      "orders": 16
+    },
+    {
+      "month": "2018-10",
+      "revenue": 589.67,
+      "orders": 4
+    }
+  ],
+  "top_categories": [
+    {
+      "category": "health_beauty",
+      "revenue": 1441248.07,
+      "items": 9670
+    },
+    {
+      "category": "watches_gifts",
+      "revenue": 1305541.61,
+      "items": 5991
+    },
+    {
+      "category": "bed_bath_table",
+      "revenue": 1241681.72,
+      "items": 11115
+    },
+    {
+      "category": "sports_leisure",
+      "revenue": 1156656.48,
+      "items": 8641
+    },
+    {
+      "category": "computers_accessories",
+      "revenue": 1059272.4,
+      "items": 7827
+    },
+    {
+      "category": "furniture_decor",
+      "revenue": 902511.79,
+      "items": 8334
+    },
+    {
+      "category": "housewares",
+      "revenue": 778397.77,
+      "items": 6964
+    },
+    {
+      "category": "cool_stuff",
+      "revenue": 719329.95,
+      "items": 3796
+    },
+    {
+      "category": "auto",
+      "revenue": 685384.32,
+      "items": 4235
+    },
+    {
+      "category": "garden_tools",
+      "revenue": 584219.21,
+      "items": 4347
+    }
+  ],
+  "top_sellers": [
+    {
+      "seller_id": "4869f7a5dfa277a7dca6462dcf3b52b2",
+      "seller_state": "SP",
+      "revenue": 249640.7,
+      "items": 1156
+    },
+    {
+      "seller_id": "7c67e1448b00f6e969d365cea6b010ab",
+      "seller_state": "SP",
+      "revenue": 239536.44,
+      "items": 1364
+    },
+    {
+      "seller_id": "53243585a1d6dc2643021fd1853d8905",
+      "seller_state": "BA",
+      "revenue": 235856.68,
+      "items": 410
+    },
+    {
+      "seller_id": "4a3ca9315b744ce9f8e9374361493884",
+      "seller_state": "SP",
+      "revenue": 235539.96,
+      "items": 1987
+    },
+    {
+      "seller_id": "fa1c13f2614d7b5c4749cbc52fecda94",
+      "seller_state": "SP",
+      "revenue": 204084.73,
+      "items": 586
+    },
+    {
+      "seller_id": "da8622b14eb17ae2831f4ac5b9dab84a",
+      "seller_state": "SP",
+      "revenue": 185192.32,
+      "items": 1551
+    },
+    {
+      "seller_id": "7e93a43ef30c4f03f38b393420bc753a",
+      "seller_state": "SP",
+      "revenue": 182754.05,
+      "items": 340
+    },
+    {
+      "seller_id": "1025f0e2d44d7041d6cf58b6550e0bfa",
+      "seller_state": "SP",
+      "revenue": 172860.69,
+      "items": 1428
+    },
+    {
+      "seller_id": "7a67c85e85bb2ce8582c35f2203ad736",
+      "seller_state": "SP",
+      "revenue": 162648.38,
+      "items": 1171
+    },
+    {
+      "seller_id": "955fee9216a65b617aa5c0531780ce60",
+      "seller_state": "SP",
+      "revenue": 160602.68,
+      "items": 1499
+    }
+  ],
+  "payment_methods": [
+    {
+      "payment_type": "credit_card",
+      "revenue": 12542084.19,
+      "transactions": 76795,
+      "orders": 76505
+    },
+    {
+      "payment_type": "boleto",
+      "revenue": 2869361.27,
+      "transactions": 19784,
+      "orders": 19784
+    },
+    {
+      "payment_type": "voucher",
+      "revenue": 379436.87,
+      "transactions": 5775,
+      "orders": 3866
+    },
+    {
+      "payment_type": "debit_card",
+      "revenue": 217989.79,
+      "transactions": 1529,
+      "orders": 1528
+    },
+    {
+      "payment_type": "not_defined",
+      "revenue": 0.0,
+      "transactions": 3,
+      "orders": 3
+    }
+  ],
+  "review_distribution": [
+    {
+      "review_score": 1,
+      "reviews": 11797
+    },
+    {
+      "review_score": 2,
+      "reviews": 3213
+    },
+    {
+      "review_score": 3,
+      "reviews": 8241
+    },
+    {
+      "review_score": 4,
+      "reviews": 19092
+    },
+    {
+      "review_score": 5,
+      "reviews": 57098
+    }
+  ],
+  "state_sales": [
+    {
+      "customer_state": "SP",
+      "revenue": 5998226.96,
+      "orders": 41746
+    },
+    {
+      "customer_state": "RJ",
+      "revenue": 2144379.69,
+      "orders": 12852
+    },
+    {
+      "customer_state": "MG",
+      "revenue": 1872257.26,
+      "orders": 11635
+    },
+    {
+      "customer_state": "RS",
+      "revenue": 890898.54,
+      "orders": 5466
+    },
+    {
+      "customer_state": "PR",
+      "revenue": 811156.38,
+      "orders": 5045
+    },
+    {
+      "customer_state": "SC",
+      "revenue": 623086.43,
+      "orders": 3637
+    },
+    {
+      "customer_state": "BA",
+      "revenue": 616645.82,
+      "orders": 3380
+    },
+    {
+      "customer_state": "DF",
+      "revenue": 355141.08,
+      "orders": 2140
+    },
+    {
+      "customer_state": "GO",
+      "revenue": 350092.31,
+      "orders": 2020
+    },
+    {
+      "customer_state": "ES",
+      "revenue": 325967.55,
+      "orders": 2033
+    }
+  ],
+  "ml": {
+    "generated_at": "2026-05-31T13:25:33.817629+00:00",
+    "dataset_source": "C:\\Users\\PC\\AppData\\Local\\Temp\\olist-public-79649bcfae33485eb24a476a86cdbb3f\\files",
+    "dataset_source_url": "https://github.com/spdrio/Brazilian-E-Commerce-Public-Dataset-by-Olist",
+    "ml_rows": 99441,
+    "split_timestamp": "2018-05-23T16:46:24+00:00",
+    "train_rows": 79465,
+    "test_rows": 19976,
+    "train_label_distribution": {
+      "0": 19625,
+      "1": 59840
+    },
+    "test_label_distribution": {
+      "0": 3626,
+      "1": 16350
+    },
+    "selection_metric": "balanced_accuracy",
+    "best_model": "Random Forest",
+    "models": [
+      {
+        "model": "Logistic Regression",
+        "accuracy": 0.8251401682018422,
+        "precision": 0.8297512182610925,
+        "recall": 0.9893577981651376,
+        "negative_recall": 0.08466629895201323,
+        "balanced_accuracy": 0.5370120485585754,
+        "f1": 0.9025526572743757,
+        "roc_auc": 0.6062785590308527,
+        "pr_auc": 0.854262783473579,
+        "tp": 16176,
+        "tn": 307,
+        "fp": 3319,
+        "fn": 174
+      },
+      {
+        "model": "Random Forest",
+        "accuracy": 0.842010412494994,
+        "precision": 0.8464083175803403,
+        "recall": 0.9858715596330275,
+        "negative_recall": 0.19332597904026474,
+        "balanced_accuracy": 0.5895987693366461,
+        "f1": 0.9108323444651636,
+        "roc_auc": 0.6701944164722671,
+        "pr_auc": 0.8792670692315242,
+        "tp": 16119,
+        "tn": 701,
+        "fp": 2925,
+        "fn": 231
+      },
+      {
+        "model": "GBTClassifier",
+        "accuracy": 0.842310772927513,
+        "precision": 0.8460207612456747,
+        "recall": 0.9869724770642202,
+        "negative_recall": 0.1900165471594043,
+        "balanced_accuracy": 0.5884945121118123,
+        "f1": 0.9110772357723577,
+        "roc_auc": 0.6747218947087886,
+        "pr_auc": 0.8806088304778573,
+        "tp": 16137,
+        "tn": 689,
+        "fp": 2937,
+        "fn": 213
+      }
+    ]
+  }
+}

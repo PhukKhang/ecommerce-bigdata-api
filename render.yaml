@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ecommerce-review-prediction-api
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./ecomerce-api/Dockerfile
+    dockerContext: ./ecomerce-api
+    healthCheckPath: /health
+    envVars:
+      - key: MODEL_PATH
+        value: /app/models/best_model
+      - key: SPARK_LOCAL_IP
+        value: 127.0.0.1
+      - key: PYTHONUNBUFFERED
+        value: "1"

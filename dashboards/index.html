@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olist Commerce Intelligence</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Olist Brazilian E-commerce</p>
+        <h1>Commerce Intelligence</h1>
+        <p class="hero-copy">
+          Theo dõi tăng trưởng doanh thu, trải nghiệm giao hàng và chất lượng
+          mô hình dự đoán customer satisfaction.
+        </p>
+      </div>
+      <div class="hero-meta">
+        <span class="status-dot"></span>
+        <span>Dữ liệu đã đồng bộ</span>
+        <small id="generated-at">Đang tải...</small>
+      </div>
+    </header>
+
+    <main>
+      <section class="kpi-grid" id="kpi-grid"></section>
+
+      <section class="dashboard-grid">
+        <article class="panel panel-wide">
+          <div class="panel-heading">
+            <div>
+              <p class="section-label">Revenue pulse</p>
+              <h2>Doanh thu theo tháng</h2>
+            </div>
+            <span class="pill">BRL</span>
+          </div>
+          <div id="revenue-chart" class="line-chart"></div>
+        </article>
+
+        <article class="panel delivery-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-label">Operations</p>
+              <h2>Hiệu suất giao hàng</h2>
+            </div>
+          </div>
+          <div id="delivery-summary"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-label">Catalog</p>
+              <h2>Top ngành hàng</h2>
+            </div>
+          </div>
+          <div id="category-bars" class="bar-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-label">Geography</p>
+              <h2>Doanh thu theo bang</h2>
+            </div>
+          </div>
+          <div id="state-bars" class="bar-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-label">Checkout</p>
+              <h2>Phương thức thanh toán</h2>
+            </div>
+          </div>
+          <div id="payment-bars" class="bar-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-label">Customer voice</p>
+              <h2>Phân bố review score</h2>
+            </div>
+          </div>
+          <div id="review-bars" class="bar-list"></div>
+        </article>
+      </section>
+
+      <section class="ml-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Machine learning</p>
+            <h2>Customer satisfaction model</h2>
+          </div>
+          <span class="model-badge" id="best-model">Đang tải model...</span>
+        </div>
+
+        <div class="ml-grid">
+          <article class="panel">
+            <h3>So sánh model</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Accuracy</th>
+                    <th>Balanced Acc.</th>
+                    <th>ROC-AUC</th>
+                  </tr>
+                </thead>
+                <tbody id="model-table"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>Confusion matrix</h3>
+            <p class="muted" id="matrix-caption"></p>
+            <div class="confusion-matrix" id="confusion-matrix"></div>
+          </article>
+
+          <article class="panel">
+            <h3>Điểm cần cải thiện</h3>
+            <div class="insight-card">
+              <span class="insight-number" id="negative-recall">--</span>
+              <span>Recall review tiêu cực</span>
+            </div>
+            <p class="muted">
+              Accuracy đã thực tế hơn sau khi loại data leakage. Ưu tiên tiếp
+              theo là xử lý class imbalance để nhận diện khách hàng không hài
+              lòng tốt hơn.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Olist Commerce Intelligence</span>
+      <a href="./powerbi/">Power BI CSV exports</a>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

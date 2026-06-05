@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-05-31T13:25:33.817629+00:00",
+  "dataset_source": "C:\\Users\\PC\\AppData\\Local\\Temp\\olist-public-79649bcfae33485eb24a476a86cdbb3f\\files",
+  "dataset_source_url": "https://github.com/spdrio/Brazilian-E-Commerce-Public-Dataset-by-Olist",
+  "ml_rows": 99441,
+  "split_timestamp": "2018-05-23T16:46:24+00:00",
+  "train_rows": 79465,
+  "test_rows": 19976,
+  "train_label_distribution": {
+    "0": 19625,
+    "1": 59840
+  },
+  "test_label_distribution": {
+    "0": 3626,
+    "1": 16350
+  },
+  "selection_metric": "balanced_accuracy",
+  "best_model": "Random Forest",
+  "models": [
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.8251401682018422,
+      "precision": 0.8297512182610925,
+      "recall": 0.9893577981651376,
+      "negative_recall": 0.08466629895201323,
+      "balanced_accuracy": 0.5370120485585754,
+      "f1": 0.9025526572743757,
+      "roc_auc": 0.6062785590308527,
+      "pr_auc": 0.854262783473579,
+      "tp": 16176,
+      "tn": 307,
+      "fp": 3319,
+      "fn": 174
+    },
+    {
+      "model": "Random Forest",
+      "accuracy": 0.842010412494994,
+      "precision": 0.8464083175803403,
+      "recall": 0.9858715596330275,
+      "negative_recall": 0.19332597904026474,
+      "balanced_accuracy": 0.5895987693366461,
+      "f1": 0.9108323444651636,
+      "roc_auc": 0.6701944164722671,
+      "pr_auc": 0.8792670692315242,
+      "tp": 16119,
+      "tn": 701,
+      "fp": 2925,
+      "fn": 231
+    },
+    {
+      "model": "GBTClassifier",
+      "accuracy": 0.842310772927513,
+      "precision": 0.8460207612456747,
+      "recall": 0.9869724770642202,
+      "negative_recall": 0.1900165471594043,
+      "balanced_accuracy": 0.5884945121118123,
+      "f1": 0.9110772357723577,
+      "roc_auc": 0.6747218947087886,
+      "pr_auc": 0.8806088304778573,
+      "tp": 16137,
+      "tn": 689,
+      "fp": 2937,
+      "fn": 213
+    }
+  ]
+}
